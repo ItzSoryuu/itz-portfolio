@@ -1,82 +1,159 @@
-# Build a Modern Portfolio Website with React & TailwindCSS
-
 <div align="center">
   <br />
-  <a href="https://youtu.be/YOUR_VIDEO_ID" target="_blank">
-    <img src="./banner.png" alt="Portfolio Website Banner">
-  </a>
+  <h1>✨ itz. — Personal Portfolio</h1>
+  <p>
+    <strong>A modern, animated portfolio website built with React + Vite + TailwindCSS v4</strong>
+  </p>
   <br />
   <div>
     <img src="https://img.shields.io/badge/-React-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React" />
-    <img src="https://img.shields.io/badge/-TailwindCSS-06B6D4?style=for-the-badge&logo=tailwindcss" alt="Tailwind CSS" />
     <img src="https://img.shields.io/badge/-Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite" />
-    <img src="https://img.shields.io/badge/-Lucide Icons-FD4D4D?style=for-the-badge&logo=lucide" alt="Lucide Icons" />
-    <img src="https://img.shields.io/badge/-Radix UI-9D4EDD?style=for-the-badge&logo=data:image/svg+xml;base64..." alt="Radix UI" />
-  </div>
-  <h3 align="center">Create a Stunning Developer Portfolio with Animations, Dark Mode, and Projects Showcase</h3>
-  <div align="center">
-    Follow the full video tutorial on 
-    <a href="https://youtu.be/YOUR_VIDEO_ID" target="_blank"><b>YouTube</b></a>
+    <img src="https://img.shields.io/badge/-TailwindCSS_v4-06B6D4?style=for-the-badge&logo=tailwindcss" alt="TailwindCSS v4" />
+    <img src="https://img.shields.io/badge/-React_Router-000000?style=for-the-badge&logo=react-router" alt="React Router" />
+    <img src="https://img.shields.io/badge/-Lucide_Icons-F56565?style=for-the-badge&logo=lucide" alt="Lucide Icons" />
+    <img src="https://img.shields.io/badge/-Radix_UI-9D4EDD?style=for-the-badge&logo=radix-ui" alt="Radix UI" />
   </div>
   <br />
 </div>
 
+---
+
 ## 📋 Table of Contents
 
-1. [Introduction](#-introduction)
+1. [About](#-about)
 2. [Tech Stack](#-tech-stack)
 3. [Features](#-features)
-4. [Quick Start](#-quick-start)
-5. [Screenshots](#-screenshots)
-6. [Deployment](#-deployment)
+4. [Project Structure](#-project-structure)
+5. [Quick Start](#-quick-start)
+6. [Available Scripts](#-available-scripts)
+7. [Deployment](#-deployment)
+8. [License](#-license)
 
 ---
 
-## 🚀 Introduction
+## 🧑‍💻 About
 
-In this tutorial, you'll learn how to build a modern portfolio website using **React**, **TailwindCSS**, **Vite**, and **Lucide Icons**. From dark mode support to responsive animations and deployable project showcases, this video walks you through every step—perfect for developers looking to level up their frontend skills or apply for jobs.
+This is the personal portfolio website of **Hanif Baihaqi Abdurrahman (ItzSoryuu)** — a 12th-grade student at SMAIT Ummul Quro Bogor with a deep passion for STEM (Science, Technology, Engineering, and Mathematics).
 
-🎥 Watch the full tutorial: [YouTube](https://youtu.be/YOUR_VIDEO_ID)
+The site showcases:
+
+- **Academic journey** — grades from semesters 1 through 5
+- **Experience** — organizational roles, competitions, and extracurriculars
+- **Projects** — featured web development work
+- **Achievements** — awards, medals, and participated events
+- **Contact** — get in touch for collaboration or opportunities
+
+Built as a single-page React application with smooth animations, glassmorphism UI, dark/light theme support, and an interactive starry night background.
 
 ---
 
 ## ⚙️ Tech Stack
 
-* **React** – Component-based UI development
-* **Vite** – Lightning-fast build tool
-* **TailwindCSS** – Utility-first CSS for styling
-* **Lucide Icons** – Clean and beautiful icon pack
-* **Radix UI** – Accessible component primitives
-* **TypeScript (optional)** – Type safety and tooling
-* **GitHub & Vercel** – Deployment
+| Technology | Purpose |
+|---|---|
+| **React 18** | UI component architecture |
+| **Vite 7** | Fast development & build tool |
+| **TailwindCSS v4** | Utility-first styling with `@theme` directives |
+| **React Router v7** | Client-side routing (Home & 404 pages) |
+| **Lucide React** | Clean, consistent icon set |
+| **Radix UI Toast** | Accessible toast notification primitives |
+| **Class Variance Authority + Tailwind Merge + Clsx** | Utility-first class management |
 
 ---
 
-## ⚡️ Features
+## ⚡ Features
 
-* 🌑 **Light/Dark Mode Toggle**
-  Save theme preference in local storage with beautiful transitions
+### 🎬 Animated Intro Splash Screen
+A multi-language greeting sequence (`Hello`, `Halo`, `Bonjour`, `Hola`, etc.) with dot indicators and a skip button — creates a welcoming first impression.
 
-* 💫 **Animated Backgrounds**
-  Stars, meteors, scroll effects, and glowing UI elements
+### 🌠 Star & Meteor Background
+A dynamic, procedurally generated starfield with twinkling stars and shooting meteors that respond to window resize — built with pure CSS animations.
 
-* 📱 **Responsive Navigation**
-  Desktop and mobile menus with glassmorphism
+### ⌨️ Typing Animation Hero
+The hero section features a self-typing and deleting name animation ("Hi, I'm Hanif") with a blinking cursor, alongside a profile photo with floating glass badges.
 
-* 👨‍💻 **Hero & About Sections**
-  Showcase who you are with smooth intro animations and buttons
+### 🌓 Dark / Light Mode Toggle
+Persistent theme preference stored in `localStorage`. Smooth color transitions across all components via CSS custom properties.
 
-* 📊 **Skills Grid**
-  Filterable progress bars and categories with animated width
+### 🪟 Glassmorphism UI
+Custom `glass` and `glass-strong` utility classes applied throughout — cards, navigation, and badges feature backdrop blur, semi-transparency, and glowing borders.
 
-* 🖼️ **Projects Showcase**
-  Display screenshots, tech stacks, and GitHub/demo links
+### 📱 Responsive Design
+Full mobile responsiveness with a hamburger menu for navigation, adaptive grid layouts, and touch-friendly interactions.
 
-* 📩 **Contact Section**
-  Social icons + responsive contact form with toast notifications
+### 🧭 Smooth Scroll Navigation
+Fixed glass navbar with active section links and smooth scroll behavior (`scroll-behavior: smooth`).
 
-* 🚀 **One-Click Deployment**
-  Easily host your site with Vercel and GitHub
+### 💼 Experience Timeline
+A left/right alternating timeline with glowing center line, animated dots, and cards containing period, title, description, and tech tags.
+
+### 🖼️ Projects Showcase
+Image cards with hover zoom effect, tech stack tags, GitHub and external demo links — fetched from a local data file.
+
+### 🏆 Achievements Grid
+Icon-categorized achievement cards (champion, medalist, award, participant) using Lucide icons.
+
+### 📊 Academic Grade Viewer
+Tabbed semester selector with animated progress bars, color-coded grade values (blue ≥95, green ≥90, yellow ≥80, etc.), and average score display. Includes a "Coming Soon" placeholder for future semesters.
+
+### 📬 Contact Section
+Contact information (email, phone, location) with social media links, plus a functional contact form with toast notification feedback.
+
+### 🚀 One-Click Deployment
+Ready for deployment on Vercel with zero configuration.
+
+---
+
+## 📁 Project Structure
+
+```
+itz-portfolio/
+├── public/
+│   ├── profile-photo.jpg          # Hero section profile image
+│   ├── projects/
+│   │   ├── project1.png
+│   │   ├── project2.png
+│   │   └── project3.png
+│   └── vite.svg
+├── src/
+│   ├── assets/
+│   ├── components/
+│   │   ├── AboutSection.jsx       # About me with skill cards
+│   │   ├── AchievementSection.jsx  # Achievement grid
+│   │   ├── ContactSection.jsx      # Contact form + info
+│   │   ├── ExperienceSection.jsx   # Timeline experience
+│   │   ├── Footer.jsx              # Page footer
+│   │   ├── GradeSection.jsx        # Academic grades viewer
+│   │   ├── HeroSection.jsx         # Hero with typing animation
+│   │   ├── Intro.jsx               # Multilingual splash intro
+│   │   ├── Navbar.jsx              # Glassmorphism navbar
+│   │   ├── ProjectsSection.jsx     # Projects gallery
+│   │   ├── StarBackground.jsx      # Animated star/meteor field
+│   │   ├── ThemeToggle.jsx         # Dark/light mode switcher
+│   │   └── ui/
+│   │       ├── toast.jsx           # Radix toast component
+│   │       └── toaster.jsx         # Toast container
+│   ├── data/
+│   │   ├── Achievement.js          # Achievement data
+│   │   ├── Experience.js           # Experience timeline data
+│   │   ├── Grade.js                # Academic grades data
+│   │   └── Projects.js             # Projects showcase data
+│   ├── hooks/
+│   │   └── use-toast.js            # Toast hook
+│   ├── lib/
+│   │   └── utils.js                # Utility functions (cn)
+│   ├── pages/
+│   │   ├── Home.jsx                # Main page (all sections)
+│   │   └── NotFound.jsx            # 404 page
+│   ├── App.jsx                     # Root component with router
+│   ├── index.css                   # Global styles + Tailwind + themes
+│   └── main.jsx                    # Entry point
+├── .eslintrc.cjs
+├── index.html
+├── package.json
+├── vite.config.js                  # Vite config with @ alias
+└── README.md
+```
 
 ---
 
@@ -84,50 +161,70 @@ In this tutorial, you'll learn how to build a modern portfolio website using **R
 
 ### Prerequisites
 
-* [Node.js](https://nodejs.org/)
-* [Git](https://git-scm.com/)
+- [Node.js](https://nodejs.org/) (v18 or higher)
+- [Git](https://git-scm.com/)
 
 ### Clone and Run
 
 ```bash
-git clone https://github.com/yourusername/react-tailwind-portfolio.git
-cd react-tailwind-portfolio
+# Clone the repository
+git clone https://github.com/ItzSoryuu/itz-portfolio.git
+
+# Navigate into the project
+cd itz-portfolio
+
+# Install dependencies
 npm install
+
+# Start the development server
 npm run dev
 ```
 
-Your app will be available at: [http://localhost:5173](http://localhost:5173)
+Your app will be available at **http://localhost:5173**
 
 ---
 
-## 🖼️ Screenshots
+## 📜 Available Scripts
 
-> 📸 Add screenshots of your Hero section, Projects grid, and Contact form here to show off your site.
+| Command | Description |
+|---|---|
+| `npm run dev` | Start Vite development server |
+| `npm run build` | Build for production (outputs to `dist/`) |
+| `npm run preview` | Preview the production build locally |
+| `npm run lint` | Run ESLint on all JS/JSX files |
 
 ---
 
 ## ☁️ Deployment
 
-### Deploy on Vercel
+### Deploy on Vercel (Recommended)
 
-1. Push your code to GitHub
-2. Go to [vercel.com](https://vercel.com)
-3. Import your repository
-4. Click **Deploy**
+1. Push your code to a GitHub repository
+2. Go to [vercel.com](https://vercel.com) and sign in with GitHub
+3. Click **Add New → Project**
+4. Import your portfolio repository
+5. Vercel will auto-detect Vite — no configuration needed
+6. Click **Deploy**
 
-Your live website will be hosted on a custom subdomain (e.g. `https://your-name.vercel.app`)
+Your live site will be available at a URL like `https://itz-portfolio.vercel.app`
 
----
-
-## 🔗 Useful Links
-
-* [React Documentation](https://reactjs.org/)
-* [Tailwind CSS Docs](https://tailwindcss.com/)
-* [Lucide Icons](https://lucide.dev/)
-* [Radix UI](https://www.radix-ui.com/)
-* [Vite](https://vitejs.dev/)
-* [Vercel](https://vercel.com/)
+You can also set up a **custom domain** in the Vercel dashboard.
 
 ---
 
-Let me know if you'd like me to generate a version with your actual GitHub repo, YouTube URL, or a banner image suggestion!
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+---
+
+<div align="center">
+  <p>
+    Built with ❤️ by <a href="https://github.com/ItzSoryuu">Hanif Baihaqi Abdurrahman</a>
+  </p>
+  <p>
+    <a href="https://github.com/ItzSoryuu">GitHub</a> ·
+    <a href="mailto:hanifbaihaqi135@gmail.com">Email</a>
+  </p>
+</div>
+
