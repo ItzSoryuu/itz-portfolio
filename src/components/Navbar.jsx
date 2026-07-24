@@ -34,7 +34,8 @@ export const Navbar = () => {
         isScrolled ? "py-3 bg-background/80 backdrop-blur-md shadow-xs" : "py-5"
       )}
     >
-      <div className="container flex items-center justify-between md:px-24">
+      <div className="container flex items-center justify-between md:grid md:grid-cols-3 md:px-24">
+        {/* Logo - left */}
         <a
           className="text-2xl font-bold text-primary flex items-center"
           href="#hero"
@@ -45,8 +46,8 @@ export const Navbar = () => {
           </span>
         </a>
 
-        {/* desktop nav */}
-        <div className="hidden md:flex items-center space-x-8 gap-1">
+        {/* desktop nav - center */}
+        <div className="hidden md:flex items-center justify-center">
           <div className="glass rounded-full px-2 py-1 flex items-center gap-1">
             {navItems.map((item, key) => (
               <a
@@ -60,26 +61,35 @@ export const Navbar = () => {
           </div>
         </div>
 
-        {/* mobile nav */}
+        {/* Desktop ThemeToggle - right */}
+        <div className="hidden md:flex items-center justify-end">
+          <ThemeToggle />
+        </div>
 
-        <button
-          onClick={() => setIsMenuOpen((prev) => !prev)}
-          className="md:hidden p-2 text-foreground z-50"
-          aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
-        >
-          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}{" "}
-        </button>
 
+        {/* Mobile controls: ThemeToggle left, Hamburger right */}
+        <div className="flex items-center gap-1 md:hidden">
+          <ThemeToggle />
+          <button
+            onClick={() => setIsMenuOpen((prev) => !prev)}
+            className="ml-4 text-foreground z-50"
+            aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
+          >
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
+
+        {/* Mobile overlay menu */}
         <div
           className={cn(
-            "fixed inset-0 bg-background/95 backdroup-blur-md z-40 flex flex-col items-center justify-center",
+            "fixed inset-0 bg-background/95 backdrop-blur-md z-40 flex flex-col items-center justify-center",
             "transition-all duration-300 md:hidden",
             isMenuOpen
               ? "opacity-100 pointer-events-auto"
               : "opacity-0 pointer-events-none"
           )}
         >
-          <div className="flex flex-col space-y-8 text-xl">
+          <div className="flex flex-col text-center space-y-8 text-xl">
             {navItems.map((item, key) => (
               <a
                 key={key}
@@ -92,7 +102,7 @@ export const Navbar = () => {
             ))}
           </div>
         </div>
-        <ThemeToggle />
+        
       </div>
     </nav>
   );

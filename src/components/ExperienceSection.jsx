@@ -3,7 +3,7 @@ import { experiences } from "../data/Experience";
 export const ExperienceSection = () => {
   return (
     <section id="experience" className="py-24 px-4 relative">
-      <div className="container mx-auto px-32 relative z-10">
+      <div className="container mx-auto px-4 md:px-32 relative z-10">
         {/* Section Header */}
         <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
           My <span className="text-primary">Experience</span>

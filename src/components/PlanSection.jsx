@@ -61,7 +61,8 @@ export const PlanSection = () => {
                   </div>
 
                   <a
-                    href="#contact"
+                    href={plan.more}
+                    target="_blank"
                     className="inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline"
                   >
                     Learn More <ArrowRight size={14} />
