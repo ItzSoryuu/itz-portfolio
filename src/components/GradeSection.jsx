@@ -86,7 +86,7 @@ export const GradeSection = () => {
 								{currentSemester?.grades.map((item, index) => (
 									<div
 										key={item.subject}
-										className="px-6 py-3 flex items-center gap-4 hover:bg-primary/5 transition-colors"
+										className="px-6 py-3 flex items-center justify-between gap-4 hover:bg-primary/5 transition-colors"
 										style={{ animationDelay: `${index * 50}ms` }}
 									>
 										{/* Subject */}
@@ -95,7 +95,7 @@ export const GradeSection = () => {
 										</span>
 
 										{/* Progress Bar */}
-										<div className="flex-1 h-2 rounded-full bg-border/50 overflow-hidden">
+										<div className="hidden md:block flex-1 h-2 rounded-full bg-border/50 overflow-hidden">
 											<div
 												className="h-full rounded-full bg-gradient-to-r from-primary/60 to-primary transition-all duration-700 ease-out"
 												style={{ width: getGradeBarWidth(item.grade) }}

@@ -13,7 +13,7 @@ export const experiences = [
     title: "Lentscape 9.0",
     subtitle: "First Place in the Coding Category",
     description:
-      "Our team (Me, Barra, and Rakha) created a web-based game inspired by Duolingo called Kronika. It features quizzes on Indonesian history and culture, incorporating gamification elements.",
+      "My team created a web-based game inspired by Duolingo called Kronika. It features quizzes on Indonesian history and culture, incorporating gamification elements.",
     tags: ["Typescript", "Next.js", "React", "PostgreSQL", "Drizzle ORM", "TailwindCSS", "Clerk", "Vercel"],
     current: true,
   },
