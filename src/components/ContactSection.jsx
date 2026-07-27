@@ -10,7 +10,8 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useToast } from "@/hooks/use-toast";
-import { useState } from "react";
+import { useState, useRef } from "react";
+import emailjs from "@emailjs/browser";
 
 export const ContactSection = () => {
   const { toast } = useToast();
@@ -29,6 +30,15 @@ export const ContactSection = () => {
       setIsSubmitting(false);
     }, 1500);
   };
+
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault
+
+    emailjs.sendForm("service_lxat4b6", "template_yv8jjs6", form.current, "piipbIfxrDKo3yKGq")
+  };
+
   return (
     <section id="contact" className="py-24 px-4 relative bg-secondary/30">
       <div className="container mx-auto max-w-5xl">
@@ -113,7 +123,7 @@ export const ContactSection = () => {
           >
             <h3 className="text-2xl font-semibold mb-6"> Send a Message</h3>
 
-            <form className="space-y-6">
+            <form ref={form} onSubmit={sendEmail} className="space-y-6">
               <div>
                 <label
                   htmlFor="name"
@@ -125,7 +135,7 @@ export const ContactSection = () => {
                 <input
                   type="text"
                   id="name"
-                  name="name"
+                  name="user_name"
                   required
                   className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden foucs:ring-2 focus:ring-primary"
                   placeholder="Hanif Baihaqi..."
@@ -143,7 +153,7 @@ export const ContactSection = () => {
                 <input
                   type="email"
                   id="email"
-                  name="email"
+                  name="user_email"
                   required
                   className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden foucs:ring-2 focus:ring-primary"
                   placeholder="example@gmail.com"
@@ -160,7 +170,7 @@ export const ContactSection = () => {
                 </label>
                 <textarea
                   id="message"
-                  name="message"
+                  name="user_message"
                   required
                   className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden foucs:ring-2 focus:ring-primary resize-none"
                   placeholder="Wanna collaborate on a project?"
