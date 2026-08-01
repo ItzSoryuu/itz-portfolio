@@ -1,4 +1,4 @@
-import { experiences } from "../data/Experience";
+import { experiences } from "@/data/Experience";
 
 export const ExperienceSection = () => {
   return (

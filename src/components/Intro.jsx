@@ -1,22 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-
-const greetings = [
-	"Hello!",
-	"Halo!",
-	"Bonjour!",
-	"Hola!",
-	"Ciao!",
-	"Olá!",
-	"Hallo!",
-	"Hej!",
-	"Привет!",
-	"こんにちは!",
-	"안녕하세요!",
-	"你好!",
-	"नमस्ते!",
-	"Merhaba!",
-	"!مرحبًا",
-];
+import { greetings } from "@/data/Greeting";
 
 export const Intro = ({ onFinish }) => {
 	const [index, setIndex] = useState(0);
@@ -45,7 +28,7 @@ export const Intro = ({ onFinish }) => {
 				}, 500);
 
 				timeoutRef.current.push(finishTimer);
-			}, 700);
+			}, 500);
 
 			timeoutRef.current.push(timer);
 
@@ -61,7 +44,7 @@ export const Intro = ({ onFinish }) => {
 			}, 180);
 
 			timeoutRef.current.push(nextTimer);
-		}, 450);
+		}, 400);
 
 		timeoutRef.current.push(timer);
 

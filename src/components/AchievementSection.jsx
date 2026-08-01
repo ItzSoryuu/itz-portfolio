@@ -1,5 +1,5 @@
 import { Medal, Award, User, Trophy } from "lucide-react";
-import { achievement } from "../data/Achievement";
+import { achievement } from "@/data/Achievement";
 
 const categoryIcons = {
   medalist: Medal,

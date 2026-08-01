@@ -24,9 +24,7 @@ export const AboutSection = () => {
             <p className="text-muted-foreground">
               My vision is to study STEM disciplines, which are currently among the most rapidly developing
               fields for the future. I am deeply committed to pursuing further education in technology or
-              industrial sectors. Therefore, I aspire to continue my studies at the Institut Teknologi
-              Bandung, specifically within the School of Electrical Engineering and Informatics – Computing
-              (STEI-K).
+              industrial sectors. Therefore, I aspire to continue my studies at the Universitas Indonesia or Institut Teknologi Bandung.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">

@@ -1,5 +1,5 @@
 import { ArrowRight, MapPin } from "lucide-react";
-import { plans } from "../data/Plan";
+import { plans } from "@/data/Plan";
 
 export const PlanSection = () => {
   return (

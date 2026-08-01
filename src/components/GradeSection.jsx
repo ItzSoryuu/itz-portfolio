@@ -1,4 +1,4 @@
-import { grade } from "../data/Grade";
+import { grade } from "@/data/Grade";
 import { useState } from "react";
 import { Clock } from "lucide-react";
 
