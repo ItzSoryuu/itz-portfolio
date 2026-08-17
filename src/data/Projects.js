@@ -1,23 +1,27 @@
 export const projects = [
   {
     id: 1,
-    title: "Lorem, ipsum dolor.",
+    title: "Propil Ganthana",
     description:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi, incidunt.",
+      "Scientific research entitled Efektivitas Konsentrasi KOH, Tegangan, dan Jarak Elektroda Tembaga Berlapis Nikel terhadap Efisiensi Generator HHO",
     image: "/projects/project1.png",
-    tags: ["React", "TailwindCSS", "Supabase"],
-    demoUrl: "#",
+    tags: ["Arduino", "Python", "IoT"],
+    demoUrl: "https://drive.google.com/file/d/1jnzPrMYIN_SyXHaO79NxSZP1aoWGSxkS/view",
     githubUrl: "#",
+    demoUrlExist: true,
+    githubUrlExist: false,
   },
   {
     id: 2,
-    title: "Lorem, ipsum dolor.",
+    title: "Kronika Learning Game",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, minus.",
+      "My team created a web-based game inspired by Duolingo called Kronika. It features quizzes on Indonesian history and culture, incorporating gamification elements.",
     image: "/projects/project2.png",
-    tags: ["TypeScript", "D3.js", "Next.js"],
-    demoUrl: "#",
-    githubUrl: "#",
+    tags: ["Next.js", "PostgreSQL", "Clerk"],
+    demoUrl: "https://kronika-app.vercel.app",
+    githubUrl: "https://github.com/ItzSoryuu/Kronika-App-Clone",
+    demoUrlExist: true,
+    githubUrlExist: true,
   },
   {
     id: 3,
@@ -28,5 +32,7 @@ export const projects = [
     tags: ["React", "Node.js", "Stripe"],
     demoUrl: "#",
     githubUrl: "#",
+    demoUrlExist: false,
+    githubUrlExist: false,
   },
 ];

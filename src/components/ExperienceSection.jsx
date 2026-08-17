@@ -27,8 +27,8 @@ export const ExperienceSection = () => {
               >
                 {/* Timeline Dot */}
                 <div className="absolute left-0 md:left-1/2 top-0 w-3 h-3 bg-primary rounded-full -translate-x-1/2 ring-4 ring-background z-10">
-                  {exp.current && (
-                    <span className="absolute inset-0 rounded-full bg-primary animate-ping opacity-75" />
+                  {exp.ongoing && (
+                    <span className="absolute inset-0 rounded-full bg-primary animate-ping" />
                   )}
                 </div>
 
