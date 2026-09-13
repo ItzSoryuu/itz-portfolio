@@ -11,18 +11,27 @@ export const StarBackground = () => {
     generateStars();
     generateMeteors();
 
+    let resizeTimer;
     const handleResize = () => {
-      generateStars();
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        generateStars();
+      }, 200);
     };
 
     window.addEventListener("resize", handleResize);
-
-    return () => window.removeEventListener("resize", handleResize);
+    return () => {
+      clearTimeout(resizeTimer);
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
   const generateStars = () => {
-    const numberOfStars = Math.floor(
-      (window.innerWidth * window.innerHeight) / 10000
+    const isMobile = window.innerWidth < 768;
+    const densityDivisor = isMobile ? 18000 : 10000;
+    const numberOfStars = Math.min(
+      Math.floor((window.innerWidth * window.innerHeight) / densityDivisor),
+      isMobile ? 35 : 80
     );
 
     const newStars = [];
@@ -30,11 +39,11 @@ export const StarBackground = () => {
     for (let i = 0; i < numberOfStars; i++) {
       newStars.push({
         id: i,
-        size: Math.random() * 3 + 1,
+        size: Math.random() * 2.5 + 1,
         x: Math.random() * 100,
         y: Math.random() * 100,
-        opacity: Math.random() * 0.5 + 0.5,
-        animationDuration: Math.random() * 4 + 2,
+        opacity: Math.random() * 0.5 + 0.3,
+        animationDuration: Math.random() * 4 + 2.5,
       });
     }
 
@@ -42,7 +51,8 @@ export const StarBackground = () => {
   };
 
   const generateMeteors = () => {
-    const numberOfMeteors = 4;
+    const isMobile = window.innerWidth < 768;
+    const numberOfMeteors = isMobile ? 2 : 4;
     const newMeteors = [];
 
     for (let i = 0; i < numberOfMeteors; i++) {
@@ -50,9 +60,9 @@ export const StarBackground = () => {
         id: i,
         size: Math.random() * 2 + 1,
         x: Math.random() * 100,
-        y: Math.random() * 20,
-        delay: Math.random() * 15,
-        animationDuration: Math.random() * 3 + 3,
+        y: Math.random() * 25,
+        delay: Math.random() * 12,
+        animationDuration: Math.random() * 3 + 3.5,
       });
     }
 

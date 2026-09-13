@@ -52,27 +52,30 @@ export const Intro = ({ onFinish }) => {
 	}, [index, onFinish]);
 
 	return (
-		<div className="fixed inset-0 z-[9999] flex items-center justify-center bg-background">
+		<div className="fixed inset-0 z-[9999] flex items-center justify-center bg-background overflow-hidden select-none">
+			{/* Ambient background glow */}
+			<div className="absolute w-72 h-72 rounded-full bg-primary/20 blur-[100px] animate-pulse pointer-events-none" />
+
 			<h1
-				className={`text-6xl md:text-8xl font-bold text-primary transition-all duration-200 ${
+				className={`relative z-10 text-5xl sm:text-6xl md:text-8xl font-extrabold text-primary text-glow tracking-tight transition-all duration-300 ease-out ${
 					visible
-						? "opacity-100 scale-100"
-						: "opacity-0 scale-95"
+						? "opacity-100 scale-100 translate-y-0"
+						: "opacity-0 scale-90 translate-y-4"
 				}`}
 			>
 				{greetings[index]}
 			</h1>
 
-			<div className="absolute bottom-16 flex items-center gap-2">
+			<div className="absolute bottom-16 flex items-center gap-2 z-10">
 				{greetings.map((_, i) => (
 					<div
 						key={i}
-						className={`h-2 w-2 rounded-full transition-all duration-300 ${
+						className={`h-2 rounded-full transition-all duration-300 ${
 							i === index
-								? "w-6 bg-primary"
+								? "w-8 bg-primary shadow-[0_0_8px_rgba(139,92,246,0.6)]"
 								: i < index
-								? "bg-primary/70"
-								: "bg-border"
+								? "w-2 bg-primary/60"
+								: "w-2 bg-border"
 						}`}
 					/>
 				))}
@@ -80,7 +83,7 @@ export const Intro = ({ onFinish }) => {
 
 			<button
 				onClick={finishIntro}
-				className="absolute top-8 right-8 rounded-full border border-primary/30 px-5 py-2 text-sm font-medium text-muted-foreground transition-colors hover:border-primary/50 hover:text-primary"
+				className="absolute top-8 right-8 z-20 rounded-full border border-primary/30 px-5 py-2 text-sm font-medium text-muted-foreground transition-all duration-200 hover:border-primary/60 hover:text-primary hover:scale-105 active:scale-95 cursor-pointer backdrop-blur-xs"
 			>
 				Skip
 			</button>

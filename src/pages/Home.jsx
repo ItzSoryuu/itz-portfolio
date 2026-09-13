@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import { Navbar } from "../components/Navbar";
 import { StarBackground } from "@/components/StarBackground";
+import { GlowBlobs } from "@/components/GlowBlobs";
 import { HeroSection } from "../components/HeroSection";
 import { AboutSection } from "../components/AboutSection";
 import { ExperienceSection } from "../components/ExperienceSection";
@@ -23,6 +24,7 @@ export const Home = () => {
       ) : (
         <div className="min-h-screen text-foreground overflow-x-hidden">
           <StarBackground />
+          <GlowBlobs />
           <Navbar />
 
           <main>

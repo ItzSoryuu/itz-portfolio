@@ -1,17 +1,20 @@
 import { experiences } from "@/data/Experience";
+import { ScrollReveal } from "./ScrollReveal";
 
 export const ExperienceSection = () => {
   return (
     <section id="experience" className="py-24 px-4 relative">
       <div className="container mx-auto px-4 md:px-32 relative z-10">
         {/* Section Header */}
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
-          My <span className="text-primary">Experience</span>
-        </h2>
+        <ScrollReveal variant="fade-in">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
+            My <span className="text-primary">Experience</span>
+          </h2>
 
-        <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-          The common thread running through the journey that accompanied me during high school.
-        </p>
+          <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
+            The common thread running through the journey that accompanied me during high school.
+          </p>
+        </ScrollReveal>
 
         {/* Timeline */}
         <div className="relative">
@@ -20,52 +23,55 @@ export const ExperienceSection = () => {
           {/* Experience Items */}
           <div className="space-y-12">
             {experiences.map((exp, idx) => (
-              <div
+              <ScrollReveal
                 key={idx}
-                className="relative grid md:grid-cols-2 gap-8 animate-fade-in"
-                style={{ animationDelay: `${(idx + 1) * 150}ms` }}
+                variant={idx % 2 === 0 ? "slide-right" : "slide-left"}
+                delay={100}
+                className="relative"
               >
-                {/* Timeline Dot */}
-                <div className="absolute left-0 md:left-1/2 top-0 w-3 h-3 bg-primary rounded-full -translate-x-1/2 ring-4 ring-background z-10">
-                  {exp.ongoing && (
-                    <span className="absolute inset-0 rounded-full bg-primary animate-ping" />
-                  )}
-                </div>
+                <div className="grid md:grid-cols-2 gap-8">
+                  {/* Timeline Dot */}
+                  <div className="absolute left-0 md:left-1/2 top-1.5 w-3 h-3 bg-primary rounded-full -translate-x-1/2 ring-4 ring-background z-10">
+                    {exp.ongoing && (
+                      <span className="absolute inset-0 rounded-full bg-primary animate-ping" />
+                    )}
+                  </div>
 
-                {/* Content */}
-                <div
-                  className={`pl-8 md:pl-0 ${idx % 2 === 0
-                    ? "md:pr-16 md:text-right"
-                    : "md:col-start-2 md:pl-16"
-                    }`}
-                >
+                  {/* Content */}
                   <div
-                    className="glass p-6 rounded-2xl border-primary/30 hover:border-primary/50"
+                    className={`pl-8 md:pl-0 ${idx % 2 === 0
+                      ? "md:pr-16 md:text-right"
+                      : "md:col-start-2 md:pl-16"
+                      }`}
                   >
-                    <span className="text-sm text-primary font-medium">
-                      {exp.period}
-                    </span>
-                    <h3 className="text-xl font-semibold mt-2">{exp.title}</h3>
-                    <p className="text-muted-foreground">{exp.subtitle}</p>
-                    <p className="text-sm text-muted-foreground mt-4">
-                      {exp.description}
-                    </p>
                     <div
-                      className={`flex flex-wrap gap-2 mt-4 ${idx % 2 === 0 ? "md:justify-end" : ""
-                        }`}
+                      className="glass p-6 rounded-2xl border-primary/30 hover:border-primary/50 card-hover"
                     >
-                      {exp.tags.map((tech, techIdx) => (
-                        <span
-                          key={techIdx}
-                          className="glass px-3 py-1 bg-surface text-xs rounded-full text-muted-foreground"
-                        >
-                          {tech}
-                        </span>
-                      ))}
+                      <span className="text-sm text-primary font-medium">
+                        {exp.period}
+                      </span>
+                      <h3 className="text-xl font-semibold mt-2">{exp.title}</h3>
+                      <p className="text-muted-foreground">{exp.subtitle}</p>
+                      <p className="text-sm text-muted-foreground mt-4">
+                        {exp.description}
+                      </p>
+                      <div
+                        className={`flex flex-wrap gap-2 mt-4 ${idx % 2 === 0 ? "md:justify-end" : ""
+                          }`}
+                      >
+                        {exp.tags.map((tech, techIdx) => (
+                          <span
+                            key={techIdx}
+                            className="glass px-3 py-1 bg-surface text-xs rounded-full text-muted-foreground"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>
