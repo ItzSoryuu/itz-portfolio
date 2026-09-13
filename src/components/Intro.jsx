@@ -57,7 +57,7 @@ export const Intro = ({ onFinish }) => {
 			<div className="absolute w-72 h-72 rounded-full bg-primary/20 blur-[100px] animate-pulse pointer-events-none" />
 
 			<h1
-				className={`relative z-10 text-5xl sm:text-6xl md:text-8xl font-extrabold text-primary text-glow tracking-tight transition-all duration-300 ease-out ${
+				className={`relative z-10 text-5xl sm:text-6xl md:text-8xl font-bold text-primary text-glow tracking-tight transition-all duration-300 ease-out ${
 					visible
 						? "opacity-100 scale-100 translate-y-0"
 						: "opacity-0 scale-90 translate-y-4"

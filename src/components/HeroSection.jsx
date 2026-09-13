@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-import { ArrowDown, Sparkles } from "lucide-react";
+import { ArrowDown, Sparkles, Earth } from "lucide-react";
 
 export const HeroSection = () => {
   const fullText = "Hi, I'm Hanif";
@@ -85,11 +85,11 @@ export const HeroSection = () => {
               <div className="absolute -bottom-4 -right-4 glass rounded-xl px-4 py-2.5 animate-float shadow-lg backdrop-blur-md border-primary/40">
                 <div className="flex items-center gap-2.5">
                   <span className="relative flex h-3 w-3">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
                   </span>
                   <span className="text-xs font-medium text-foreground">
-                    Open to collaborate
+                    Do not disturb
                   </span>
                 </div>
               </div>
@@ -101,7 +101,7 @@ export const HeroSection = () => {
                   <div>
                     <div className="text-base font-bold text-primary leading-tight">High School</div>
                     <div className="text-[11px] text-muted-foreground leading-tight">
-                      Student & Dev
+                      Student
                     </div>
                   </div>
                 </div>
@@ -112,7 +112,7 @@ export const HeroSection = () => {
 
         <div className="space-y-6 order-2 md:order-1 text-center md:text-left">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full glass border-primary/30 text-xs text-primary font-medium">
-            <span className="w-2 h-2 rounded-full bg-primary animate-ping" />
+            <Earth className="animate-pulse"/>
             <span>Welcome to my universe</span>
           </div>
 

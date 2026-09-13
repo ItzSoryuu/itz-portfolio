@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { ThemeToggle } from "../components/ThemeToggle";
 
 const navItems = [
@@ -35,6 +36,27 @@ export const Navbar = () => {
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") setIsMenuOpen(false);
+    };
+
+    if (isMenuOpen) {
+      window.addEventListener("keydown", handleKeyDown);
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isMenuOpen]);
 
   useEffect(() => {
     const observerOptions = {
@@ -74,10 +96,10 @@ export const Navbar = () => {
   return (
     <nav
       className={cn(
-        "fixed w-full z-40 transition-all duration-300",
+        "fixed top-0 left-0 w-full z-40 transition-all duration-300 bg-transparent glass",
         isScrolled
-          ? "py-3 bg-background/75 backdrop-blur-md border-b border-border/40 shadow-xs"
-          : "py-5 bg-transparent"
+          ? "py-3 backdrop-blur-md border-b border-border/40 shadow-xs"
+          : "py-4"
       )}
     >
       <div className="container flex items-center justify-between md:grid md:grid-cols-3 md:px-24">
@@ -124,44 +146,12 @@ export const Navbar = () => {
         <div className="flex items-center gap-1 md:hidden">
           <ThemeToggle />
           <button
-            onClick={() => setIsMenuOpen((prev) => !prev)}
-            className="ml-4 text-foreground z-50 cursor-pointer p-1"
-            aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
+            onClick={() => setIsMenuOpen(true)}
+            className="ml-3 text-foreground cursor-pointer p-1.5 rounded-lg hover:bg-foreground/5 transition-colors"
+            aria-label="Open Menu"
           >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            <Menu size={24} />
           </button>
-        </div>
-
-        {/* Mobile overlay menu */}
-        <div
-          className={cn(
-            "fixed inset-0 bg-background/98 backdrop-blur-lg z-40 flex flex-col items-center justify-center",
-            "transition-all duration-300 md:hidden",
-            isMenuOpen
-              ? "opacity-100 pointer-events-auto"
-              : "opacity-0 pointer-events-none"
-          )}
-        >
-          <div className="flex flex-col text-center space-y-8 text-xl">
-            {navItems.map((item, key) => {
-              const isActive = activeSection === item.href.slice(1);
-              return (
-                <a
-                  key={key}
-                  href={item.href}
-                  className={cn(
-                    "text-lg transition-all duration-300 px-6 py-2 rounded-full",
-                    isActive
-                      ? "text-primary font-bold bg-primary/10"
-                      : "text-foreground/80 hover:text-primary"
-                  )}
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.name}
-                </a>
-              );
-            })}
-          </div>
         </div>
       </div>
 
@@ -172,6 +162,68 @@ export const Navbar = () => {
           style={{ width: `${scrollProgress}%` }}
         />
       </div>
+
+      {/* Mobile Menu Portal (avoids parent backdrop-filter / containing block issues on scroll) */}
+      {typeof document !== "undefined" &&
+        createPortal(
+          <>
+            {/* Mobile Dimmed Backdrop */}
+            <div
+              className={cn(
+                "fixed inset-0 bg-black/60 backdrop-blur-[2px] z-50 transition-opacity duration-300 md:hidden",
+                isMenuOpen
+                  ? "opacity-100 pointer-events-auto"
+                  : "opacity-0 pointer-events-none"
+              )}
+              onClick={() => setIsMenuOpen(false)}
+              aria-hidden="true"
+            />
+
+            {/* Mobile Drawer */}
+            <aside
+              className={cn(
+                "fixed top-0 right-0 bottom-0 h-screen h-dvh w-[75%] max-w-xs bg-background/95 backdrop-blur-xl border-l border-border/40 shadow-2xl z-50 flex flex-col p-6 transition-transform duration-300 ease-in-out md:hidden",
+                isMenuOpen ? "translate-x-0" : "translate-x-full"
+              )}
+              aria-label="Mobile Navigation"
+            >
+              <div className="flex items-center justify-between pb-4 border-b border-border/40 mb-4">
+                <span className="text-xl font-bold text-primary">
+                  <span className="text-glow text-foreground">itz</span>.
+                </span>
+                <button
+                  onClick={() => setIsMenuOpen(false)}
+                  className="text-foreground p-1.5 rounded-lg hover:bg-foreground/5 transition-colors cursor-pointer"
+                  aria-label="Close Menu"
+                >
+                  <X size={22} />
+                </button>
+              </div>
+
+              <div className="flex flex-col space-y-2 overflow-y-auto flex-1 py-2">
+                {navItems.map((item, key) => {
+                  const isActive = activeSection === item.href.slice(1);
+                  return (
+                    <a
+                      key={key}
+                      href={item.href}
+                      className={cn(
+                        "text-base transition-all duration-200 px-4 py-2.5 rounded-xl font-medium",
+                        isActive
+                          ? "text-primary font-semibold bg-primary/10"
+                          : "text-foreground/80 hover:text-primary hover:bg-primary/5"
+                      )}
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {item.name}
+                    </a>
+                  );
+                })}
+              </div>
+            </aside>
+          </>,
+          document.body
+        )}
     </nav>
   );
 };

@@ -15,7 +15,7 @@ export const experiences = [
     description:
       "Event Team Member and MC of Akar Kata 4.0, Event Team Leader of Pusmud Grow Series 1.0, Equipment Team Member of Satelite 2.0",
     tags: ["Akar Kata 4.0", "Pusmud Grow Series 1.0", "Satelite 2.0"],
-    ongoing: true,
+    ongoing: false,
   },
   {
     period: "2026",

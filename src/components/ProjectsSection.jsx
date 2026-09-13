@@ -44,7 +44,7 @@ export const ProjectsSection = () => {
                       {project.tags.map((tag) => (
                         <span key={`${project.id}-${tag}`} className="px-2 py-1 text-xs font-medium border rounded-full bg-secondary text-secondary-foreground">
                           {tag}
-                        </span>
+                        </span> 
                       ))}
                     </div>
 

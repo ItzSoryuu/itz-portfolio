@@ -25,14 +25,14 @@ export const projects = [
   },
   {
     id: 3,
-    title: "Lorem, ipsum dolor.",
+    title: "Pusmud 25/26 Recap",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, assumenda.",
+      "I created a recap video for the Pustakawan Muda of the 2025/2026 term. Featuring various work programs and includes a credit sequence listing the members of that term.",
     image: "/projects/project3.png",
-    tags: ["React", "Node.js", "Stripe"],
-    demoUrl: "#",
+    tags: ["Pusmud", "Literacy", "Alight Motion"],
+    demoUrl: "https://www.instagram.com/reel/DcvoIM2T_yz/?igsi=MXN4ejVwN3lzMW9rZQ==",
     githubUrl: "#",
-    demoUrlExist: false,
+    demoUrlExist: true,
     githubUrlExist: false,
   },
 ];
