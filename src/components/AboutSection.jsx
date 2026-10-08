@@ -8,7 +8,7 @@ export const AboutSection = () => {
       <div className="container mx-auto max-w-5xl">
         <ScrollReveal variant="fade-in">
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
-            About <span className="text-primary"> Me</span>
+            Who<span className="text-primary"> Am I?</span>
           </h2>
         </ScrollReveal>
 

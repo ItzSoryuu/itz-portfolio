@@ -8,32 +8,31 @@ export const plans = [
     faculty: "Faculty of Engineering",
     major: "Industrial Engineering",
     description:
-      "A study program focused on the design, improvement, and installation of integrated systems involving people, materials, equipment, and energy. UI offers a competitive academic environment at its Depok campus.",
+      "The Industrial Engineering program at UI is committed to producing graduates who excel in operations research, human resource management, and production and inventory control.",
     tags: ["SNBP"],
     more: "https://www.ie.ui.ac.id/"
   },
   {
     id: 2,
-    icon: Factory,
+    icon: Forklift,
     university: "Institut Teknologi Bandung",
-    faculty: "FTTM",
-    major:
-      "Petroleum Engineering",
+    faculty: "FTI-RI",
+    major: "Industrial Engineering",
     description:
-      "A faculty specializing in the exploration, extraction, and management of energy resources such as oil, natural gas, and geothermal energy. ITB FTTM is recognized as one of the top mining and petroleum engineering faculties in Asia, combining geoscience expertise with cutting-edge drilling and reservoir engineering technology.",
+      "Industrial Engineering at ITB is a study program that integrates engineering, management, and information systems to improve industrial efficiency and productivity.",
     tags: ["SNBT"],
-    more: "https://fttm.itb.ac.id/"
+    more: "https://fti.itb.ac.id/"
   },
   {
     id: 3,
-    icon: Forklift,
-    university: "Institut Teknologi Bandung",
-    faculty: "FTI",
+    icon: Factory,
+    university: "Institut Teknologi Sepuluh Nopember",
+    faculty: "FTIRS",
     major: "Industrial Engineering",
     description:
-      "A study program that integrates engineering, management, and information systems to improve industrial efficiency and productivity. FTI-RI ITB emphasizes the optimization of complex industrial systems through a combination of technical expertise and business acumen.",
+      "The Industrial Engineering program at ITS focuses on system design and optimization to improve productivity and efficiency.",
     tags: ["SNBT"],
-    more: "https://fti.itb.ac.id/"
+    more: "https://www.its.ac.id/tindustri/"
   },
 ];
 

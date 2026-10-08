@@ -2,19 +2,17 @@ import { ArrowRight, ExternalLink, Github } from "lucide-react";
 import { projects } from "@/data/Projects";
 import { ScrollReveal } from "./ScrollReveal";
 
-export const ProjectsSection = () => {
+export const WorksSection = () => {
   return (
-    <section id="projects" className="py-24 px-4 relative">
+    <section id="works" className="py-24 px-4 relative">
       <div className="container mx-auto max-w-5xl">
         <ScrollReveal variant="fade-in">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
-            {" "}
-            Featured <span className="text-primary"> Projects </span> — Unfinished
+            Featured <span className="text-primary"> Works </span>
           </h2>
 
           <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-            Here are some of my recent projects. Each project was carefully
-            crafted with attention to detail, performance, and user experience.
+            Here are some of my recent works. Each creation was created with attention to details.
           </p>
         </ScrollReveal>
 

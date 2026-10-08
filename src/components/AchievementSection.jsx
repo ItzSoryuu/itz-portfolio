@@ -16,7 +16,7 @@ export const AchievementSection = () => {
       <div className="container mx-auto max-w-5xl">
         <ScrollReveal variant="fade-in">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
-            My <span className="text-primary"> Achievements</span>
+            Wall of<span className="text-primary"> Fame</span>
           </h2>
           <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
             Several achievements attained during high school.

@@ -7,7 +7,7 @@
   --color-card: hsl(0 0% 100%);
   --color-surface: hsl(0 0% 100%);
 
-  --color-primary: hsl(252 51% 57%);
+  --color-primary: hsl(258.31, 89.53%, 66.27%);
   --color-primary-foreground: hsl(210 40% 98%);
 
   --color-border: hsl(214 32% 91%);
@@ -99,7 +99,7 @@
   --color-card: hsl(222 47% 8%);
   --color-surface: hsl(0 0% 20%);
 
-  --color-primary: #7f6ce0;
+  --color-primary: #8B5CF6;
   --color-primary-foreground: hsl(213 31% 91%);
 
   --color-border: hsl(217 33% 20%);
